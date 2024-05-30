@@ -6,7 +6,7 @@ function ImageCard({ item: { description, likes, user, urls } }) {
       <img className={css.pic} src={urls.small} alt={description} />
       <ul className={css.cardDescription}>
         <li className={css.description}>
-          Name
+          Author
           <span className={css.accent}>{user.name}</span>
         </li>
         <li className={css.description}>
