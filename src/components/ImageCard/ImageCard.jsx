@@ -1,9 +1,12 @@
 import css from "./ImageCard.module.css";
 
-function ImageCard() {
+function ImageCard({ item: { description, likes, user, urls } }) {
   return (
     <div>
-      <img src="" alt="" />
+      <img src={urls.small} alt={description} />
+      <p>{user.name}</p>
+      <p>{description}</p>
+      <p>{likes}</p>
     </div>
   );
 }
