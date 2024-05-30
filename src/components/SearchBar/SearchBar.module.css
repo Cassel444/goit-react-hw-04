@@ -1,0 +1,45 @@
+.box {
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  background-color: #1f1297;
+  margin-bottom: 30px;
+}
+.form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+}
+.input {
+  padding: 10px 0 10px 60px;
+  font-size: 22px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex: 1;
+  border-radius: 4px 0 0 4px;
+  box-sizing: border-box;
+}
+.input:focus,
+.input:active {
+  outline: none;
+  box-shadow: none;
+}
+.btn {
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333333de;
+  font-size: 18px;
+}
+.btn:focus,
+.btn:active {
+  outline: none;
+  box-shadow: none;
+}
+.search {
+  pointer-events: none;
+}

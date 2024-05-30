@@ -3,7 +3,7 @@ import ImageCard from "../ImageCard/ImageCard";
 
 function ImageGallery({ photos }) {
   return (
-    <ul>
+    <ul className={css.list}>
       {photos.map((photo) => (
         <li key={photo.id}>
           <ImageCard item={photo} />

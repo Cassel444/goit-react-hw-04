@@ -2,11 +2,18 @@ import css from "./ImageCard.module.css";
 
 function ImageCard({ item: { description, likes, user, urls } }) {
   return (
-    <div>
-      <img src={urls.small} alt={description} />
-      <p>{user.name}</p>
-      <p>{description}</p>
-      <p>{likes}</p>
+    <div className={css.photo}>
+      <img className={css.pic} src={urls.small} alt={description} />
+      <ul className={css.cardDescription}>
+        <li className={css.description}>
+          Name
+          <span className={css.accent}>{user.name}</span>
+        </li>
+        <li className={css.description}>
+          Likes
+          <span className={css.accent}>{likes}</span>
+        </li>
+      </ul>
     </div>
   );
 }
