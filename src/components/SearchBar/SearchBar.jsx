@@ -17,6 +17,7 @@ function SearchBar({ onSearch }) {
   };
   return (
     <header className={css.box}>
+      <h1 className={css.logo}>PhotoScout</h1>
       <form className={css.form} onSubmit={handleSubmit}>
         <input
           className={css.input}
