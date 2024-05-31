@@ -6,6 +6,7 @@ import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
 import fetchPhotos from "../../photo-api";
 import "./App.css";
 import { useEffect, useState } from "react";
+import ImageModal from "../ImageModal/ImageModal";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -13,6 +14,8 @@ function App() {
   const [photos, setPhotos] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [selectedPhoto, setSelectedPhoto] = useState(null);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   useEffect(() => {
     if (searchQuery === "") {
@@ -44,15 +47,34 @@ function App() {
     setPage(1);
     setPhotos([]);
   }
+
+  function openModal(photo) {
+    setSelectedPhoto(photo);
+    setModalIsOpen(true);
+  }
+
+  function closeModal() {
+    setModalIsOpen(false);
+    setSelectedPhoto(null);
+  }
   return (
     <>
       <SearchBar onSearch={handleSearch} />
       {error && <ErrorMessage />}
-      {photos.length > 0 && <ImageGallery photos={photos} />}
+      {photos.length > 0 && (
+        <ImageGallery photos={photos} onClick={openModal} />
+      )}
       {photos.length > 0 && !loading && (
         <LoadMoreBtn onClick={handleLoadMore} />
       )}
       {loading && <Loader />}
+      {selectedPhoto && (
+        <ImageModal
+          isOpen={modalIsOpen}
+          onClose={closeModal}
+          photo={selectedPhoto}
+        />
+      )}
     </>
   );
 }

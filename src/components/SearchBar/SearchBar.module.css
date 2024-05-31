@@ -1,7 +1,6 @@
 .box {
   width: 100%;
-  padding: 20px;
-  padding-right: 100px;
+  padding: 20px 100px;
   display: flex;
   justify-content: center;
   background-color: #1f1297;
